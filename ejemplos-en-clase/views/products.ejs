@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Products</title>
+	<style>
+		ol {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		li {
+			display: inline-block;
+		}
+		.in-sale {
+			border: solid 5px red;
+		}
+	</style>
+</head>
+<body>
+	<h2>Soy la vista de productos</h2>
+
+	<ol>
+		<% products.forEach(function (oneProduct) { %>
+		<li class="<%= oneProduct.inSale ? 'in-sale' : null %>" >
+			<h4><%= oneProduct.name %></h4>
+			<p>Precio: <%= oneProduct.price %></p>
+			<img src="<%= oneProduct.image %>" width="100" alt="<%= oneProduct.name %>"> <br>
+			<a href="/products/<%= oneProduct.id %>">VER DETALLE</a>
+		</li>
+		<% }) %>
+	</ol>
+</body>
+</html>

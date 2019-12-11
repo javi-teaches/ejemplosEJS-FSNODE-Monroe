@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Index</title>
+</head>
+<body>
+
+	<% if (trajoFacturas) { %>
+		<h3> El profe <%= docente %> es re copado. Pues nos trajo facturas. Y quienes más comieron fueron: </h3>
+		<ol>
+			<% estudiantes.forEach(function (cadaEstudiante) { %>
+				<li> <%= cadaEstudiante %> </li>
+			<% }) %>
+		</ol>
+	<% } else { %>
+		<h3>Che <%= docente %> y las facturas ¿?</h3>
+	<% } %>
+
+</body>
+</html>
